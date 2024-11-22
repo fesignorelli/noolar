@@ -1,9 +1,7 @@
 import React, { useRef } from "react";
-import "./components/css/AreaDaLeitura.css";
-import AreaDaLeitura from "./components/Inicio";
-import BoxLivros from "./components/Categorias";
-import Livros from "./components/Livros";
-import Page from "./pagina";
+import "./AreaLeitura/css/AreaDaLeitura.css";
+
+import Page from "./AreaLeitura/pagina";
 
 
 const App = () => {
