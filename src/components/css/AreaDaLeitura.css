@@ -1,0 +1,45 @@
+/* Estilo geral para o contêiner principal */
+#root {
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 2vw; /* Espaçamento interno */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+  
+  /* Estilo para destaque de texto */
+  .highlight {
+    color: #f6794a; /* Cor de destaque (laranja) */
+  }
+  
+  /* Área de cartões que contém as categorias e livros */
+  .cardsArea {
+    display: flex; /* Utiliza Flexbox */
+    flex-direction: column; /* Organização em coluna */
+    position: absolute; /* Controle de layout */
+    top: 45vw; /* Distância do topo */
+    left: 0;
+    width: 100%; /* Largura total do contêiner */
+    text-align: left; /* Texto alinhado à esquerda */
+  }
+  
+  /* Estilos para a seção dos livros */
+  .livros {
+    display: flex; /* Flexbox para alinhar os livros em linha */
+    flex-direction: row; /* Alinhamento horizontal */
+    margin: 0 6vw; /* Margem horizontal */
+    overflow-x: auto; /* Rolagem horizontal */
+    scroll-behavior: smooth; /* Rolagem suave */
+    -webkit-overflow-scrolling: touch; /* Suavidade no mobile */
+    white-space: nowrap; /* Linha contínua */
+    padding-bottom: 2vw; /* Espaçamento inferior */
+    cursor: grab; /* Cursor de arraste */
+  }
+  
+  .livros::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem */
+  }
+  
+  .card {
+    position: relative;
+    transform: translateY(-2vw); /* Ajuste vertical */
+  }
+  
