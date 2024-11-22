@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.highlight {
+  color: #f6794a;
+}
+
+.box-title {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  margin: 6vw 10vw;
+}
+
+.subtitulo {
+  font-size: 3vw;
+  font-weight: 400;
+  width: 70%;
+  letter-spacing: 0.2%;
+  color: white;
+}
+
+.titulo {
+  font-size: 5vw;
+  margin: 0 0 0.5vw 1vw;
+  color: white;
+}
+
+.imagem-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 8vw;
+  right: 10vw;
+  width: 20%;
+  height: fit-content;
+}
+
+.btnSeusLivros button {
+  letter-spacing: 0.1%;
+  background-color: #f6794a;
+  border-radius: 3vw;
+  display: flex;
+  position: absolute;
+  top: 30vw;
+  left: 10vw;
+  border: none;
+  max-width: 30%;
+  color: white;
+  padding: 1%;
+}
+
+.btnSeusLivros button span {
+  font-size: 1.5vw;
+}
+
+.bgImage {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -10vw;
+  right: 0;
+  width: 100%;
+  height: 70vw;
+  overflow: hidden;
+}
+
+.bgImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .box-title {
+    margin: 5vw 10vw;
+    top: 5vw;
+  }
+
+  .subtitulo {
+    font-size: 3.5vw;
+    width: 85%;
+    margin-top: -2vw;
+  }
+
+  .titulo {
+    font-size: 6vw;
+    margin-bottom: 1vw;
+  }
+
+  .imagem-container {
+    top: 13vw;
+    right: 2vw;
+  }
+
+  .btnSeusLivros button {
+    top: 34vw;
+    max-width: 35%;
+  }
+
+  .btnSeusLivros button span {
+    font-size: 2.5vw;
+  }
+
+  .bgImage {
+    top: -10vw;
+  }
+}
