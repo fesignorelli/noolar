@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
-import "./components/css/AreaDaLeitura.css";
-import AreaDaLeitura from "./components/Inicio";
-import BoxLivros from "./components/Categorias";
-import Livros from "./components/Livros";
+import AreaDaLeitura from "./Inicio";
+import BoxLivros from "./Categorias";
+import Livros from "./Livros";
+
 // Definindo as categorias e livros com título, autor, imagem e descrição
 const categorias = [
   {
-    nome: "Literatura Brasileira",
-    textcard: (
+    nome: "Português",
+    descricaoCategoria: (
       <>
         Aprimore sua <span className="highlight">Compreensão</span> da língua,{" "}
         <span className="highlight">amplie</span> seu vocabulário e{" "}
@@ -15,151 +15,83 @@ const categorias = [
         precisa!
       </>
     ),
+
     livros: [
       {
-        titulo: "Dom Casmurro",
-        autor: "Machado de Assis",
-        image:
-          "/DomCasmurroCapa.jpg",
-        desc: "Capa do livro",
-        pdf: "/domCasmurro.pdf"
+        titulo: "Livro A",
+        autor: "Autor A",
+        image: "../public/images/books/portugues/1.png",
 
-      },
-
-      {
-        titulo: "Iracema",
-        autor: "José de Alencar",
-        image:
-          "https://m.media-amazon.com/images/I/71LCDi6E2oL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
       },
-
       {
-        titulo: "O Ateneu",
-        autor: "Raul Pompeia",
-        image:
-          "https://m.media-amazon.com/images/I/A17Rzp18iXL._AC_UF1000,1000_QL80_.jpg",
+        titulo: "Livro B",
+        autor: "Autor B",
+        image: "../public/images/books/portugues/2.png",
         desc: "Capa do livro",
       },
-
       {
-        titulo: "O Cortiço",
-        autor: "Aluísio Azevedo",
-        image: "https://m.media-amazon.com/images/I/81m1emiSp-S.jpg",
+        titulo: "Livro C",
+        autor: "Autor C",
+        image: "../public/images/books/portugues/3.png",
+
         desc: "Capa do livro",
       },
-
       {
-        titulo: "A Escrava Isaura",
-        autor: "Bernardo Guimarães",
-        image:
-          "https://m.media-amazon.com/images/I/61Bz-Qtxn4L._AC_UF1000,1000_QL80_.jpg",
+        titulo: "Livro A",
+        autor: "Autor A",
+        image: "../public/images/books/portugues/4.png",
+
         desc: "Capa do livro",
       },
-
       {
-        titulo: "Quincas Borba",
-        autor: "Machado de Assis",
-        image:
-          "https://m.media-amazon.com/images/I/61k9Y9fwZ6L._AC_UF1000,1000_QL80_.jpg",
+        titulo: "Livro B",
+        autor: "Autor B",
+        image: "../public/images/books/portugues/5.png",
+
         desc: "Capa do livro",
       },
-
       {
-        titulo: "Os Sertões",
-        autor: "Euclides da Cunha",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/7/7e/Os_Sert%C3%B5es_livro_1902.jpg",
+        titulo: "Livro C",
+        autor: "Autor C",
+        image: "../public/images/books/portugues/6.png",
+
         desc: "Capa do livro",
       },
-
       {
-        titulo: "Casa de Pensão",
-        autor: "Aluísio Azevedo",
-        image:
-          "https://m.media-amazon.com/images/I/91AUmPizGxS._AC_UF1000,1000_QL80_.jpg",
+        titulo: "Livro A",
+        autor: "Autor A",
+        image: "../public/images/books/portugues/7.png",
+
         desc: "Capa do livro",
       },
-
       {
-        titulo: "Broquéis",
-        autor: "Cruz e Sousa",
-        image:
-          "https://m.media-amazon.com/images/I/717Mh1FB+bL._AC_UF1000,1000_QL80_.jpg",
+        titulo: "Livro B",
+        autor: "Autor B",
+        image: "../public/images/books/portugues/8.png",
+
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro C",
+        autor: "Autor C",
+        image: "../public/images/books/portugues/9.png",
+
         desc: "Capa do livro",
       },
     ],
   },
   {
-    nome: "Literatura Estrangeira",
-    livros: [
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-      },
-    ],
-  },
-  {
-    nome: "Literatura Infantil",
+    nome: "Educativos",
+    descricaoCategoria: (
+      <>
+        O gênero Educativo engloba todos os textos que têm como objetivo
+        principal<span className="highlight"> ensinar </span> da língua,{" "}
+        <span className="highlight"> informar </span> e
+        <span className="highlight"> esclarecer </span> sobre determinado
+        assunto precisa!
+      </>
+    ),
     livros: [
       {
         titulo: "Livro D",
@@ -227,7 +159,16 @@ const categorias = [
     ],
   },
   {
-    nome: "Livros de Formação Profissional",
+    nome: "Clássicos",
+    descricaoCategoria: (
+      <>
+        Os gêneros <span className="highlight"> lírico,</span>
+        <span className="highlight"> épico </span> e{" "}
+        <span className="highlight"> dramático</span>, definidos por
+        Aristóteles, são a base da classificação literária e moldam a tradição
+        literária ocidental.
+      </>
+    ),
     livros: [
       {
         titulo: "Livro D",
@@ -295,7 +236,91 @@ const categorias = [
     ],
   },
   {
-    nome: "Contos Brasileiros",
+    nome: "Culinária",
+    descricaoCategoria: (
+      <>
+        <span className="highlight"> Receitas </span> e{" "}
+        <span className="highlight"> cultura </span> gastronômica, com o
+        objetivo de ensinar, inspirar e orientar sobre o preparo de alimentos e
+        práticas na cozinha!
+      </>
+    ),
+    livros: [
+      {
+        titulo: "Livro D",
+        autor: "Autor D",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro E",
+        autor: "Autor E",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro F",
+        autor: "Autor F",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro D",
+        autor: "Autor D",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro E",
+        autor: "Autor E",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro F",
+        autor: "Autor F",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro D",
+        autor: "Autor D",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro E",
+        autor: "Autor E",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+      {
+        titulo: "Livro F",
+        autor: "Autor F",
+        image:
+          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        desc: "Capa do livro",
+      },
+    ],
+  },
+  {
+    nome: "Técnicos",
+    descricaoCategoria: (
+      <>
+        Livros focados em transmitir{" "}
+        <span className="highlight">conhecimentos</span> especializados e{" "}
+        <span className="highlight"> práticos</span>, abrangendo áreas como
+        ciência, tecnologia, engenharia e matemática
+      </>
+    ),
     livros: [
       {
         titulo: "Livro D",
@@ -364,7 +389,7 @@ const categorias = [
   },
 ];
 
-function Page() {
+function AreaDaLeitura() {
   // Referências para cada lista de livros nas categorias
   const livrosRefs = useRef([]);
 
@@ -415,7 +440,7 @@ function Page() {
             {/* Componente BoxLivros que exibe a categoria e texto */}
             <BoxLivros
               categoria={categoria.nome}
-              textoCard={categoria.textcard}
+              textoCard={categoria.descricaoCategoria}
             />
 
             {/* Lista de livros que podem ser movidos com arraste */}
@@ -430,9 +455,11 @@ function Page() {
             </div>
           </div>
         ))}
+        
       </div>
+
     </div>
   );
 }
 
-export default Page;
+export default AreaDaLeitura;
