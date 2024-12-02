@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./AreaLeitura/css/AreaDaLeitura.css";
+import "./AreaLeitura/components/css/AreaDaLeitura.css";
 
 import Page from "./AreaLeitura/pagina";
 

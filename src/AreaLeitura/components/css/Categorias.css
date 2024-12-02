@@ -26,6 +26,7 @@
     position: relative; /* Posição relativa */
     text-align: left; /* Alinhamento do texto à esquerda */
     margin-top: 10vw; /* Espaçamento superior */
+
   }
   
   /* Responsividade para dispositivos com largura menor que 800px */

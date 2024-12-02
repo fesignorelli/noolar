@@ -15,7 +15,7 @@
   top: 0;
   left: 0;
   text-align: left;
-  margin: 6vw 10vw;
+  margin: 15vw 10vw;
 }
 
 .subtitulo {
@@ -80,7 +80,7 @@
 @media (max-width: 800px) {
   .box-title {
     margin: 5vw 10vw;
-    top: 5vw;
+    top: 12vw;
   }
 
   .subtitulo {

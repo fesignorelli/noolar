@@ -4,15 +4,18 @@ import AreaDaLeitura from "./components/Inicio";
 import BoxLivros from "./components/Categorias";
 import Livros from "./components/Livros";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+// Definindo as categorias e livros com título, autor, imagem e descrição
 // Definindo as categorias e livros com título, autor, imagem e descrição
 const categorias = [
   {
     nome: "Literatura Brasileira",
     textcard: (
       <>
-        Aprimore sua <span className="highlight">Compreensão</span> da língua,{" "}
-        <span className="highlight">amplie</span> seu vocabulário e{" "}
-        <span className="highlight">escreva</span> de forma mais clara e
+        Mejora tu <span className="highlight">Comprensión</span> del idioma,{" "}
+        <span className="highlight">amplía</span> tu vocabulario y{" "}
+        <span className="highlight">escribe</span> de manera más clara y
         precisa!
       </>
     ),
@@ -20,502 +23,319 @@ const categorias = [
       {
         titulo: "Dom Casmurro",
         autor: "Machado de Assis",
-        image:
-          "/DomCasmurroCapa.jpg",
+        image: "/DomCasmurroCapa.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/domCasmurro.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/domCasmurro.pdf",
       },
-
       {
         titulo: "Iracema",
         autor: "José de Alencar",
         image:
           "https://m.media-amazon.com/images/I/71LCDi6E2oL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/iracema.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/iracema.pdf",
       },
-
       {
         titulo: "O Ateneu",
         autor: "Raul Pompeia",
         image:
           "https://m.media-amazon.com/images/I/A17Rzp18iXL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/oAteneu.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/oAteneu.pdf",
       },
-
       {
         titulo: "O Cortiço",
         autor: "Aluísio Azevedo",
         image: "https://m.media-amazon.com/images/I/81m1emiSp-S.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/oCortico.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/oCortico.pdf",
       },
-
       {
         titulo: "A Escrava Isaura",
         autor: "Bernardo Guimarães",
         image:
           "https://m.media-amazon.com/images/I/61Bz-Qtxn4L._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/EscravaIsaura.pdf"
+        pdf: "/Livros/LIteraturaPortuguesa/EscravaIsaura.pdf",
       },
-
       {
         titulo: "Quincas Borba",
         autor: "Machado de Assis",
         image:
           "https://m.media-amazon.com/images/I/61k9Y9fwZ6L._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/QuincasBorba.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/QuincasBorba.pdf",
       },
-
       {
         titulo: "Os Sertões",
         autor: "Euclides da Cunha",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/7/7e/Os_Sert%C3%B5es_livro_1902.jpg",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/OsSertoes.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/OsSertoes.pdf",
       },
-
       {
-        titulo: "Casa de Pensão",
-        autor: "Aluísio Azevedo",
+        titulo: "Memórias Póstumas de Brás Cubas",
+        autor: "Machado de Assis",
         image:
-          "https://m.media-amazon.com/images/I/91AUmPizGxS._AC_UF1000,1000_QL80_.jpg",
+          "https://images.tcdn.com.br/img/editor/up/783226/Memorias_Postumas_de_Bras_Cubas_site.png",
         desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/CasaDePensao.pdf"
-
-      },
-
-      {
-        titulo: "Broquéis",
-        autor: "Cruz e Sousa",
-        image:
-          "https://m.media-amazon.com/images/I/717Mh1FB+bL._AC_UF1000,1000_QL80_.jpg",
-        desc: "Capa do livro",
-        pdf: "/Livros/LIteraturaPortuguesa/Broqueis.pdf"
-
+        pdf: "/Livros/LIteraturaPortuguesa/memoriasPostumasDeBrasCubas.pdf",
       },
     ],
   },
   {
     nome: "Literatura Estrangeira",
+    textcard: (
+      <>
+        Viaja <span className="highlight">por las páginas</span> de los mayores
+        clásicos de la literatura mundial,{" "}
+        <span className="highlight">descubre</span> nuevas culturas y{" "}
+        <span className="highlight">amplía</span> tu visión del mundo!
+      </>
+    ),
     livros: [
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Ilíada",
+        autor: "Homero",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyCoyQ07kla1Xp-nZF9thT4isO5Pn8UtNF7uEO5n_VTZ3jpZEq0r4PdLSFRUVoKgOwlRGVoXd-24qT8zX_7njY3TnaKFf2EEFvzEMpiX5Eb0iCvtibMbKVk0EG7W2_m5yJkFZxJ7XHhpca2czN1X6pbw3STw8vgY5yHW--GsfFOi5VSFU-lbRtIFECLw/s320-rw/Il%C3%ADada%20%E2%80%93%20Homero.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "https://drive.google.com/file/d/1GYDbdiWy_tQsD5WNDy-GGr2s6znWhEFA/view",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "A Mandrágora",
+        autor: "Nicolau Maquiavel",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Mj_FoDzpFcE1Vq2unk9yTjSZG0h6nejfe4pFk73IJuxzKn0lKL_WE3-aB0uc3aqnG59Oe7h1FN9Uy5ITZEv1ngJ3i3Lzr9hK1an-TiaMRG23ephbdsTEkYEn4Q-rZ-XKg20bwNv9XfCLvuCGo3Zw524rGWqmh6zsQh3sdhGTQiXyFyIgAMUu9W28tg/w280/A%20Mandr%C3%A1gora%20%E2%80%93%20Nicolau%20Maquiavel.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "https://drive.google.com/file/d/1UFr3LUn-fvX8rU8bVHMwpf1C5lpT9afg/view",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "Dom Quixote",
+        autor: "Miguel de Cervantes",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://www.lpm.com.br/livros/imagens/dom_quixote_hq_9788525433633_hd.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaEstrangeira/domQuixote.pdf",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Orgulho e Preconceito",
+        autor: "Jane Austen",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://m.media-amazon.com/images/I/81-HB-s9KVL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaEstrangeira/OrgulhoEPreconceito.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "A Divina Comédia",
+        autor: "Dante Aliguieri",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja8uDL31kaSSxKC8hkiV2TCHfkz2JWqnu4n2fRyeHyGBSUS8xyd2GjEDo4iFeAciI0a8YWiL7v484YMZAymiJhaoVAxXjo00yFO9IDuNQjMTZ_fabKSLpSu7s1-N-h2Iu7DrHXfx-LGUmi0QVeqOQQ0H9kyCBC-NAGBGTPARcqIukUClXYatgFa3oJrg/s320-rw/A%20Divina%20Com%C3%A9dia%20%5BObra%20Completa%5D%20%5BIlustrada%5D%20%E2%80%93%20Dante%20Aliguieri.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "https://drive.google.com/file/d/1qduCeRSx1pwdIhi0m7q-eES2ul7TbSba/view",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "Assim Falou Zaratustra",
+        autor: "Friedrich Nietzsche",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi43SsrS1gdDjxXQ0GyiE0zEGExZ2XOHWbqqyFEW_YA5tQsVjjrk13UXcq1nfsxYUMI4zApsjUbE6XU8EvFeTuZOL6A_Jq_GzKDiQW1RkEvLIYljW2mPWNjCU3AbAOpuj4FIS151LnZxSNX7C8BMqSPmwjwiTolW7gfGSYWZbB5nNh4hmjpFUyQyQoU4A/s320-rw/Assim%20Falou%20Zaratustra%20%E2%80%93%20Friedrich%20Nietzsche.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "https://drive.google.com/file/d/12fAc_zPZQbEZd9ItZtrbPyt8Kvzx0FYD/view",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "A república",
+        autor: "Platão",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLBL3HPdQzZUJQaMC_mfSqGWPzTXlSUNjxBW55XBHChU_iCf4kdQlM1reD4_g0b0GE76zV6CZsnzifbxrmT9mnO79Ywkh1LOaH3HRZiYex1ber9KN5N4qXHouA6YRXtYnb3C9w5cmC8I-zvGBESk_rHmOrINpQSi3BzXwttS5mHeTGnkRatQei9vEp_Q/s320-rw/A%20Rep%C3%BAblica%20%E2%80%93%20Plat%C3%A3o.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "https://drive.google.com/file/d/12QXnnR27q7b5on_oauAEDzRdAyu_6Fjp/view",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "Alice no País das Maravilhas",
+        autor: "Lewis Carroll",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://http2.mlstatic.com/D_NQ_NP_691663-MLU69845281454_062023-O.webp",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaEstrangeira/AliceNoPaisDasMaravilhas.pdf",
       },
     ],
   },
   {
     nome: "Literatura Infantil",
+textcard: (
+  <>
+    Enamórate de historias <span className="highlight">mágicas</span> y{" "}
+    <span className="highlight">divertidas</span>, que despiertan la
+    imaginación y <span className="highlight">enseñan</span> valores
+    importantes para los niños!
+  </>
+),
     livros: [
       {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+        titulo: "O Pequeno Príncipe",
+        autor: "Antoine de Saint-Exupéry",
+        image: "https://m.media-amazon.com/images/I/81fDUxOq7gL.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/OPequenoPrincipe.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "Pinóquio",
+        autor: "Carlo Collodi",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://m.media-amazon.com/images/I/710Z5PpF-LL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/Pinoquio.pdf",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "A Bela Adormecida",
+        autor: "Charles Perrault",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcY3FBMf96si8AGz3BxtV3mEt3KVYuqbHkbeIqbNzcjtf8VcE-HjC0WkAOD2414JAAQiw&usqp=CAU",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/ABelaAdormecida.pdf",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Chapeuzinho Vermelho",
+        autor: "Charles Perrault",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://acdn.mitiendanube.com/stores/001/501/070/products/chapeuzinho-vermelho-e-o-lobo-mau1-ad856b0844bfe4c18b16614259280854-1024-1024.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/ChapeuzinhoVermelho.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "O Patinho Feio",
+        autor: "Hans Christian Andersen",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://m.media-amazon.com/images/I/918k9yYbhuL._AC_UF1000,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/OPatinhoFeio.pdf",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "Rapunzel",
+        autor: "Irmãos Grimm",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://m.media-amazon.com/images/I/71wWf-C-aUL._AC_UF894,1000_QL80_.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/Rapunzel.pdf",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "João e Maria",
+        autor: "Irmãos Grimm",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://cdn.awsli.com.br/899/899421/produto/34452554/f206ce63dd.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/LiteraturaInfantil/JoaoEMaria.pdf",
       },
     ],
   },
   {
-    nome: "Livros de Formação Profissional",
+    nome: "Formação Profissional",
+    nome: "Formación Profesional",
+    textcard: (
+      <>
+        Aprende a <span className="highlight">impulsar</span> tu carrera,{" "}
+        <span className="highlight">desarrolla</span> habilidades valiosas y{" "}
+        <span className="highlight">conquista</span> nuevos desafíos
+        profesionales con estas lecturas!
+      </>
+    ),
+    
     livros: [
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Desenvolvimento Pessoal e Profissional",
+        autor: "Carlos Silva",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9d/Desenvolvimento_Pessoal.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/DesenvolvimentoPessoalEProfissional.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "Gestão de Carreira",
+        autor: "Patricia Costa",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gestao_de_Carreira.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/GestaoDeCarreira.pdf",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "Comunicação Eficaz no Ambiente Corporativo",
+        autor: "Rafael Almeida",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/2/24/Comunicacao_Eficaz.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/ComunicacaoEficaz.pdf",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Gestão de Projetos para Iniciantes",
+        autor: "Fernanda Martins",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/7/70/Gestao_de_Projetos.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/GestaoDeProjetos.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "Liderança e Motivação",
+        autor: "Eduardo Lima",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/6/63/Lideranca_Motivacao.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/LiderancaEMotivacao.pdf",
       },
       {
-        titulo: "Livro F",
-        autor: "Autor F",
+        titulo: "Empreendedorismo e Inovação",
+        autor: "Joana Rocha",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/8/81/Empreendedorismo_Inovacao.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/EmpreendedorismoEInovacao.pdf",
       },
       {
-        titulo: "Livro D",
-        autor: "Autor D",
+        titulo: "Marketing Digital para Profissionais",
+        autor: "Ricardo Souza",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/d/d5/Marketing_Digital.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/MarketingDigitalParaProfissionais.pdf",
       },
       {
-        titulo: "Livro E",
-        autor: "Autor E",
+        titulo: "Finanças Pessoais para Executivos",
+        autor: "Laura Pereira",
         image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/94/Financas_Pessoais.jpg",
         desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-    ],
-  },
-  {
-    nome: "Contos Brasileiros",
-    livros: [
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro D",
-        autor: "Autor D",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro E",
-        autor: "Autor E",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
-      },
-      {
-        titulo: "Livro F",
-        autor: "Autor F",
-        image:
-          "https://marketplace.canva.com/EAF0stqfV5w/1/0/1003w/canva-capa-de-livro-trabalho-escolar-vintage-bege-marrom-e-branco-Pg1zXYd1MTA.jpg",
-        desc: "Capa do livro",
-        pdf: "/oCortico.pdf"
-
+        pdf: "/Livros/FormacaoProfissional/FinancasPessoaisParaExecutivos.pdf",
       },
     ],
   },
 ];
 
+
 function Page() {
-  // Referências para cada lista de livros nas categorias
   const livrosRefs = useRef([]);
 
-  // Função para capturar o início do clique e configurar o scroll manual (drag)
-  const handleMouseDown = (e, index) => {
-    const currentRef = livrosRefs.current[index];
-    if (!currentRef) return;
-
-    const startX = e.pageX - currentRef.offsetLeft;
-    const scrollLeft = currentRef.scrollLeft;
-
-    // Função para mover a lista de livros horizontalmente
-    const handleMouseMove = (e) => {
-      const x = e.pageX - currentRef.offsetLeft;
-      const walk = (x - startX) * 2;
-      currentRef.scrollLeft = scrollLeft - walk;
-    };
-
-    // Função para encerrar o movimento ao soltar o mouse
-    const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    // Adicionando eventos de movimento e liberação do mouse
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
-
+  
   return (
     <div className="page">
-      {/* Componente de cabeçalho com título e subtítulo */}
-      <AreaDaLeitura
-        titulo="Área da Leitura"
-        subtitulo={
-          <>
-            Consuma conteúdos <span className="highlight">educativos,</span>{" "}
-            <span className="highlight">culturais</span> e{" "}
-            <span className="highlight">agregadores!</span>
-          </>
-        }
-      />
-
-      {/* Área dos cards que exibem as categorias de livros */}
+      <AreaDaLeitura />
+  
       <div className="cardsArea">
         {categorias.map((categoria, cardIndex) => (
           <div className="card" key={cardIndex}>
-            {/* Componente BoxLivros que exibe a categoria e texto */}
-            <BoxLivros
-              categoria={categoria.nome}
-              textoCard={categoria.textcard}
-            />
-
-            {/* Lista de livros que podem ser movidos com arraste */}
-            <div
-              className="livros"
-              ref={(el) => (livrosRefs.current[cardIndex] = el)}
-              onMouseDown={(e) => handleMouseDown(e, cardIndex)}
+            <BoxLivros categoria={categoria.nome} textoCard={categoria.textcard} />
+            
+            <Swiper
+              spaceBetween={10} // Espaço entre os itens
+              slidesPerView="4.3" // Exibe os slides de forma automática
+              onSlideChange={(e) => handleSlideChange(e, cardIndex)} // Se necessário, para ações ao mudar o slide
+              className="livrosSwiper"
             >
               {categoria.livros.map((livro, index) => (
-                <Livros key={index} {...livro} />
+                <SwiperSlide key={index}>
+                  <Livros {...livro} />
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         ))}
       </div>

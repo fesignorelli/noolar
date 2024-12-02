@@ -7,8 +7,10 @@ function Livros(props) {
     <a href={props.pdf} download>
       <img className='imagemLivro' src={props.image} alt={props.desc} draggable="false" />
     </a>
-    <h4>{props.titulo}</h4>
+    <div className="legenda">
+    <h4 >{props.titulo}</h4>
     <p>{props.autor}</p>
+    </div>
   </div>
 );
 }
