@@ -8,7 +8,7 @@ function AreaDaLeitura(props) {
         <img src="/images/bgOficial.png" alt="" />
       </div>
       <div className="box-title">
-        <h1 className="titulo">Area da leitura</h1>
+        <h1 className="titulo">Área da leitura</h1>
         <h2 className="subtitulo">
           Consuma contéudos <span className="highlight"> educativos</span> ,
           <span className="highlight"> culturais </span> e<span className="highlight"> agregadores</span>
